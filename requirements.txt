@@ -5,6 +5,3 @@ matplotlib
 seaborn
 scikit-learn
 underthesea
-surprise
-jieba
-gensim
