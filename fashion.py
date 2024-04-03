@@ -10,7 +10,7 @@ import seaborn as sns
 from surprise import Reader, Dataset, SVD, SVDpp, NMF, SlopeOne, KNNBasic, KNNBaseline, KNNWithMeans, KNNWithZScore, CoClustering, BaselineOnly
 from surprise import *
 from surprise.model_selection.validation import cross_validate
-#from gensim import corpora, models, similarities
+from gensim import corpora, models, similarities
 import jieba
 import re
 
@@ -106,8 +106,8 @@ elif choice == 'Recommedation by description':
         # Convert search words into sparse vectots
         search = search.lower().split()
         kw_vector = dictionary.doc2bow(search)
-        print("View product's vector:")
-        print(kw_vector)
+        #print("View product's vector:")
+        #print(kw_vector)
         # Similar calculation
         sim = index[tfidf[kw_vector]]
         # print result:
