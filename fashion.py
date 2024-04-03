@@ -8,7 +8,7 @@ import seaborn as sns
 #from surprise import Reader, Dataset, SVD, SVDpp, NMF, SlopeOne, KNNBasic, KNNBaseline, KNNWithMeans, KNNWithZScore, CoClustering, BaselineOnly
 #from surprise import *
 #from surprise.model_selection.validation import cross_validate
-#from gensim import corpora, models, similarities
+from gensim import corpora, models, similarities
 #import jieba
 import re
 
