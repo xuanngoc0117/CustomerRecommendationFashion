@@ -10,7 +10,7 @@ import seaborn as sns
 from surprise import Reader, Dataset, SVD, SVDpp, NMF, SlopeOne, KNNBasic, KNNBaseline, KNNWithMeans, KNNWithZScore, CoClustering, BaselineOnly
 from surprise import *
 from surprise.model_selection.validation import cross_validate
-from gensim import corpora, models, similarities
+#from gensim import corpora, models, similarities
 import jieba
 import re
 
@@ -18,18 +18,9 @@ import re
 df = pd.read_csv('ThoiTrangNam_raw_cleaned.csv', encoding='utf8')
 df2 = pd.read_csv("data_rating_cleaned.csv")
 
-# load model and others:
-with open('surprise_svd_model.pkl', 'rb') as f:
-    model = pickle.load(f)
 
-with open('dictionary.pkl', 'rb') as f:
-    dictionary = pickle.load(f)
-# load tfidf
-with open('tfidf.pkl', 'rb') as f:
-    tfidf = pickle.load(f)
-# load index
-with open('index.pkl', 'rb') as f:
-    index = pickle.load(f)
+
+
 
 #--------------
 # GUI
@@ -82,6 +73,9 @@ elif choice == 'Recommedation by user':
 
     # function: in ra 5 sản phẩm có EstimateScore>=3 lớn nhất
     def get_recommendation(user_id):
+        # load model and others:
+        with open('surprise_svd_model.pkl', 'rb') as f:
+            model = pickle.load(f)
         df_select = df2[(df2['user_id'] == user_id) & (df2['rating'] >= 3)]
         # df_select = df_select.set_index('product_id')
         df_score = df2[["product_id", 'user_id', 'user', 'rating', 'product_name']]
@@ -98,6 +92,14 @@ elif choice == 'Recommedation by user':
 
 elif choice == 'Recommedation by description':
     def recommend_product_by_name(search):  # , dictionary, tfidf, index
+        with open('dictionary.pkl', 'rb') as f:
+            dictionary = pickle.load(f)
+        # load tfidf
+        with open('tfidf.pkl', 'rb') as f:
+            tfidf = pickle.load(f)
+        # load index
+        with open('index.pkl', 'rb') as f:
+            index = pickle.load(f)
         # Preprocess the product name
         search = word_tokenize(search, format="text")
         print("product_name:", search)
