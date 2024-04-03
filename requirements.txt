@@ -7,3 +7,4 @@ scikit-learn
 underthesea
 surprise
 gensim
+jieba
