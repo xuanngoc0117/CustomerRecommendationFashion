@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import pickle
 import streamlit as st
-import pickle
 from underthesea import word_tokenize, pos_tag, sent_tokenize
 import matplotlib.pyplot as plt
 import seaborn as sns
