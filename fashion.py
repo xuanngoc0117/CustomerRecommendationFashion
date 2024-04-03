@@ -93,6 +93,7 @@ elif choice == 'Recommedation by user':
 
 elif choice == 'Recommedation by description':
     def recommend_product_by_name(search):  # , dictionary, tfidf, index
+        import pickle
         with open('dictionary.pkl', 'rb') as f:
             dictionary = pickle.load(f)
         # load tfidf
