@@ -2,6 +2,7 @@ streamlit
 surprise
 numpy
 pandas
+scipy
 matplotlib
 seaborn
 scikit-learn
