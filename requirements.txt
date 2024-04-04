@@ -1,7 +1,8 @@
-streamlit
 numpy
+plotly
 pandas
 gensim
+streamlit
 scipy
 surprise
 matplotlib
