@@ -1,8 +1,8 @@
+streamlit
 numpy
 plotly
 pandas
 gensim==4.3.2
-streamlit
 scipy
 surprise
 matplotlib
