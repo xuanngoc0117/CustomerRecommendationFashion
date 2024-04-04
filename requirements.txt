@@ -5,6 +5,5 @@ gensim==4.3.2
 surprise
 matplotlib
 seaborn
-scikit-learn
 jieba
 underthesea
