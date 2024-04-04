@@ -3,8 +3,8 @@ import pandas as pd
 import streamlit as st
 import pickle
 from underthesea import word_tokenize, pos_tag, sent_tokenize
-import matplotlib.pyplot as plt
-import seaborn as sns
+#import matplotlib.pyplot as plt
+#import seaborn as sns
 import scipy
 #from gensim import *
 
