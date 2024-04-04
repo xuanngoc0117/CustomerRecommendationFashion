@@ -1,7 +1,7 @@
 numpy
 plotly
 pandas
-gensim
+gensim==4.3.2
 streamlit
 scipy
 surprise
@@ -9,3 +9,4 @@ matplotlib
 seaborn
 jieba
 underthesea
+pickle
