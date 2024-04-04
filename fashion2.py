@@ -5,8 +5,7 @@ import pickle
 from underthesea import word_tokenize, pos_tag, sent_tokenize
 import matplotlib.pyplot as plt
 import seaborn as sns
-#from gensim import parsing, corpora, matutils, interfaces, models, similarities, utils
-
+from gensim import *
 # 1. Read data
 df = pd.read_csv('ThoiTrangNam_raw_cleaned.csv', encoding='utf8')
 
