@@ -1,7 +1,7 @@
-streamlit==1.4.0
+streamlit
 numpy
 pandas
-gensim==4.3.2
+gensim
 scipy
 surprise
 matplotlib
