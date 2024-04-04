@@ -2,6 +2,7 @@ streamlit==1.4.0
 numpy
 pandas
 gensim==4.3.2
+scipy
 surprise
 matplotlib
 seaborn
