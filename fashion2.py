@@ -5,22 +5,16 @@ import pickle
 from underthesea import word_tokenize, pos_tag, sent_tokenize
 import matplotlib.pyplot as plt
 import seaborn as sns
-#from gensim import *
+import scipy
+from gensim import *
+
+
 # 1. Read data
 df = pd.read_csv('ThoiTrangNam_raw_cleaned.csv', encoding='utf8')
 
-# load model and others:
-with open('surprise_svd_model.pkl', 'rb') as f:
-    model = pickle.load(f)
 
-with open('dictionary.pkl', 'rb') as f:
-    dictionary = pickle.load(f)
-# load tfidf
-with open('tfidf.pkl', 'rb') as f:
-    tfidf = pickle.load(f)
-# load index
-with open('index.pkl', 'rb') as f:
-    index = pickle.load(f)
+
+
 
 #--------------
 # GUI
@@ -61,6 +55,14 @@ elif choice == 'Data infomation':
 
 elif choice == 'Recommedation by description':
     def recommend_product_by_name(search):  # , dictionary, tfidf, index
+        with open('dictionary.pkl', 'rb') as f:
+            dictionary = pickle.load(f)
+        # load tfidf
+        with open('tfidf.pkl', 'rb') as f:
+            tfidf = pickle.load(f)
+        # load index
+        with open('index.pkl', 'rb') as f:
+            index = pickle.load(f)
         # Preprocess the product name
         search = word_tokenize(search, format="text")
         print("product_name:", search)
