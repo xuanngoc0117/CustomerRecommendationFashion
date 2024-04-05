@@ -1,6 +1,7 @@
 streamlit
 numpy
 pandas
+scikit-learn
 gensim==4.3.0
 surprise==0.1
 underthesea
