@@ -12,7 +12,7 @@ from underthesea import word_tokenize, pos_tag, sent_tokenize
 from surprise.model_selection.validation import cross_validate
 #from gensim import *
 #from gensim import corpora, models, similarities
-import jieba
+#import jieba
 import re
 
 # 1. Read data
