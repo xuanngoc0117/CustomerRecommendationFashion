@@ -10,8 +10,9 @@ from underthesea import word_tokenize, pos_tag, sent_tokenize
 #from surprise import Reader, Dataset, SVD, SVDpp, NMF, SlopeOne, KNNBasic, KNNBaseline, KNNWithMeans, KNNWithZScore, CoClustering, BaselineOnly
 #from surprise import *
 from surprise.model_selection.validation import cross_validate
-#from gensim import *
-#from gensim import corpora, models, similarities
+from gensim import corpora
+from gensim import models
+from gensim import similarities
 #import jieba
 import re
 
