@@ -93,10 +93,17 @@ elif choice == 'Recommedation by user':
 
 elif choice == 'Recommedation by description':
     def recommend_product_by_name(search):  # , dictionary, tfidf, index
-        #import pickle
+        import pickle
         from gensim import corpora, models, similarities
-        #from underthesea import word_tokenize, pos_tag, sent_tokenize
+        from underthesea import word_tokenize, pos_tag, sent_tokenize
         
+        
+        # Preprocess the product name
+        search = word_tokenize(search, format="text")
+        print("product_name:", search)
+        # Convert search words into sparse vectots
+        search = search.lower().split()
+
         with open('dictionary.pkl', 'rb') as f:
             dictionary = pickle.load(f)
         # load tfidf
@@ -105,11 +112,6 @@ elif choice == 'Recommedation by description':
         # load index
         with open('index.pkl', 'rb') as f:
             index = pickle.load(f)
-        # Preprocess the product name
-        search = word_tokenize(search, format="text")
-        print("product_name:", search)
-        # Convert search words into sparse vectots
-        search = search.lower().split()
         kw_vector = dictionary.doc2bow(search)
         #print("View product's vector:")
         #print(kw_vector)
