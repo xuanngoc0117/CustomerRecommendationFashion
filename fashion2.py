@@ -7,8 +7,7 @@ from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 from underthesea import word_tokenize, pos_tag, sent_tokenize
 #import matplotlib.pyplot as plt
 #import seaborn as sns
-import scipy
-#from gensim import *
+from gensim import *
 
 
 # 1. Read data
