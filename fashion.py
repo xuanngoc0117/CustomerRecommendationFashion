@@ -94,6 +94,9 @@ elif choice == 'Recommedation by user':
 elif choice == 'Recommedation by description':
     def recommend_product_by_name(search):  # , dictionary, tfidf, index
         import pickle
+        from gensim import *
+        from underthesea import word_tokenize, pos_tag, sent_tokenize
+        
         with open('dictionary.pkl', 'rb') as f:
             dictionary = pickle.load(f)
         # load tfidf
@@ -135,9 +138,9 @@ elif choice == 'Recommedation by description':
         return results
 
     search = st.text_input("Nhập thông tin tìm kiếm:")
-    result = recommend_product_by_name(search)
+    results = recommend_product_by_name(search)
     # In danh sách sản phẩm tìm được ra màn hình
     st.write("Danh sách sản phẩm tìm được:")
-    st.dataframe(result)
+    st.dataframe(results)
 
 
