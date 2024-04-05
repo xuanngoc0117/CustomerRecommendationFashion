@@ -94,7 +94,7 @@ elif choice == 'Recommedation by user':
 elif choice == 'Recommedation by description':
     def recommend_product_by_name(search):  # , dictionary, tfidf, index
         import pickle
-        from gensim import *
+        from gensim import corpora, models, similarities
         from underthesea import word_tokenize, pos_tag, sent_tokenize
         
         with open('dictionary.pkl', 'rb') as f:
