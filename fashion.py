@@ -20,7 +20,14 @@ import re
 df = pd.read_csv('ThoiTrangNam_raw_cleaned.csv', encoding='utf8')
 df2 = pd.read_csv("data_rating_cleaned.csv")
 
+@st.cache_resource
+def load_model():
+    with open('surprise_svd_model.pkl', 'rb') as f:
+            model = pickle.load(f)
+    return model
 
+# Gọi hàm tải model
+model = load_model()
 
 
 
@@ -76,8 +83,8 @@ elif choice == 'Recommedation by user':
     # function: in ra 5 sản phẩm có EstimateScore>=3 lớn nhất
     def get_recommendation(user_id):
         # load model and others:
-        with open('surprise_svd_model.pkl', 'rb') as f:
-            model = pickle.load(f)
+        #with open('surprise_svd_model.pkl', 'rb') as f:
+            #model = pickle.load(f)
         df_select = df2[(df2['user_id'] == user_id) & (df2['rating'] >= 3)]
         # df_select = df_select.set_index('product_id')
         df_score = df2[["product_id", 'user_id', 'user', 'rating', 'product_name']]
